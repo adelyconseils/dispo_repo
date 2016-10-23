@@ -17,7 +17,7 @@
     ""
   },
   "scripts": {
-    "postinstall" : "npm install parse-server-mail-template-adapter --save"
+    "postinstall" : "npm install parse-server-mail-template-adapter --save",
     "start": "node index.js"
   },
   "engines": {

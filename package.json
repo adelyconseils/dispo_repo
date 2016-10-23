@@ -16,7 +16,7 @@
     "parse-dashboard":"1.0.18"
   },
   "scripts": {
-    "postinstall" : "npm install parse-server-mail-template-adapter --save",
+    //"postinstall" : "npm install parse-server-mail-template-adapter --save",
     "start": "node index.js"
   },
   "engines": {

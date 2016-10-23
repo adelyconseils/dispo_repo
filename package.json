@@ -13,8 +13,7 @@
     "kerberos": "~0.0.x",
     "parse": "~1.8.0",
     "parse-server": "*",
-    "parse-dashboard":"1.0.18",
-    ""
+    "parse-dashboard":"1.0.18"
   },
   "scripts": {
     "postinstall" : "npm install parse-server-mail-template-adapter --save",

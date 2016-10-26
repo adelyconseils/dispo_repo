@@ -30,32 +30,7 @@ var api = new ParseServer({
    facebook: {
      appIds: "1782370528657715"
             }
-	},
-  emailAdapter: {
-    module: 'parse-server-mailgun-adapter-template',
-    options: {
-      // The address that your emails come from
-      fromAddress: 'no-reply@adelyconseils.com',
-      // Your domain from mailgun.com
-      domain: 'mg.adelyconseils.com',
-      // Your API key from mailgun.com
-      apiKey: 'key-1b23be72fff992e8a31a47a687d0a95e',
- 
-      // Verification email subject
-      verificationSubject: 'Please verify your e-mail for %appname%',
-      // Verification email body
-      verificationBody: 'Hi,\n\nYou are being asked to confirm the e-mail address %email% with %appname%\n\nClick here to confirm it:\n%link%',
-      //OPTIONAL (will send HTML version of email):
-      //verificationBodyHTML: fs.readFileSync("./verificationBody.html", "utf8") ||  null,
- 
-      // Password reset email subject
-      passwordResetSubject: 'Password Reset Request for %appname%',
-      // Password reset email body
-      passwordResetBody: 'Hi,\n\nYou requested a password reset for %appname%.\n\nClick here to reset it:\n%link%',
-      //OPTIONAL (will send HTML version of email):
-      //passwordResetBodyHTML: "<!DOCTYPE html><html xmlns=http://www.w3.org/1999/xhtml>........"
-    }
-  }
+	}
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:

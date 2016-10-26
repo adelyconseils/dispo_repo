@@ -22,6 +22,14 @@ var api = new ParseServer({
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
+  push: {
+    ios: {
+      pfx: 'DispoDevCertificats.p12', // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      passphrase: 'Taraji1919', // optional password to your p12
+      bundleId: 'com.adelyconseils.dispo', // The bundle identifier associate with your app
+      production: false // Specifies which environment to connect to: Production (if true) or Sandbox
+    }
+  },
   oauth:{ 
    twitter: {
      consumer_key: "32d0uRpgWDHYsHde7labE6ak1", // REQUIRED

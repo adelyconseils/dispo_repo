@@ -38,7 +38,42 @@ var api = new ParseServer({
    facebook: {
      appIds: "1782370528657715"
             }
-	}
+	},
+   // Enable email verification
+  verifyUserEmails: true,
+  // if `verifyUserEmails` is `true` and
+  //     if `emailVerifyTokenValidityDuration` is `undefined` then
+  //        email verify token never expires
+  //     else
+  //        email verify token expires after `emailVerifyTokenValidityDuration`
+  //
+  // `emailVerifyTokenValidityDuration` defaults to `undefined`
+  //
+  // email verify token below expires in 2 hours (= 2 * 60 * 60 == 7200 seconds)
+  //emailVerifyTokenValidityDuration: 2 * 60 * 60, // in seconds (2 hours = 7200 seconds)
+
+  // set preventLoginWithUnverifiedEmail to false to allow user to login without verifying their email
+  // set preventLoginWithUnverifiedEmail to true to prevent user from login if their email is not verified
+  preventLoginWithUnverifiedEmail: true, // defaults to false
+
+  // The public URL of your app.
+  // This will appear in the link that is used to verify email addresses and reset passwords.
+  // Set the mount path as it is in serverURL
+  publicServerURL: process.env.SERVER_URL,
+  // Your apps name. This will appear in the subject and body of the emails that are sent.
+  appName: 'Dispo App',
+  // The email adapter
+  emailAdapter: {
+    module: 'parse-server-simple-mailgun-adapter',
+    options: {
+      // The address that your emails come from
+      fromAddress: 'noreply@adelyconseils.com',
+      // Your domain from mailgun.com
+      domain: 'sandbox5f2f28f67da64e36b54917ec73d4e0df.mailgun.org',
+      // Your API key from mailgun.com
+      apiKey: 'key-1b23be72fff992e8a31a47a687d0a95e',
+    }
+  },
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
